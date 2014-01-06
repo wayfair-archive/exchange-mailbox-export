@@ -1,4 +1,4 @@
-﻿param(
+param(
 	[Parameter(Mandatory = $true, Position = 0)]
 	[ValidateScript({Test-Path -Path $_})]
 	$UsersToArchiveTextFile,
@@ -55,7 +55,7 @@ function createPST {
 		
 		#Set the current error variable equal to $null
 		$curError = $null
-		New-MailboxExportRequest -Mailbox $UserName -FilePath $NetworkMailboxExportDest\$UserName.pst -Priority:High -BadItemLimit:3 -Confirm:$false -Name:$UserName –Verbose -ErrorVariable curError
+		New-MailboxExportRequest -Mailbox $UserName -FilePath $NetworkMailboxExportDest\$UserName.pst -Priority:High -BadItemLimit:3 -Confirm:$false -Name:$UserName �Verbose -ErrorVariable curError
 		
 		#If an error was triggered trying to export, log it and add it to the email string
 		if ($curError){
