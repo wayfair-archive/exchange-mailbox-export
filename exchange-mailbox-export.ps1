@@ -1,3 +1,9 @@
+#Written by Erik Giglio for Wayfair LLC
+#1/7/2014
+#Please visit the Wayfair Engineering blog for how to properly configure
+#Exchange 2010 to allow mailbox exporting here
+#http://engineering.wayfair.com/exchange-2010-upgrade-the-archiving-edition
+
 param(
 	[Parameter(Mandatory = $true, Position = 0)]
 	[ValidateScript({Test-Path -Path $_})]
@@ -5,13 +11,13 @@ param(
 	[Parameter(Mandatory = $true, Position = 1)]
 	$NetworkMailboxExportDest = "\\Server\ServerPath",
 	[Parameter(Mandatory = $true, Position = 2)]
-	[string[]] $EmailTo = @("John Doe <jdoe@domain.com>"),
+	[string[]] $EmailTo = @("John Doe <jdoe@example.com>"),
 	[Parameter(Mandatory = $true, Position = 3)]
-	[string[]] $EmailFrom = @("John Doe Admin <jdoeadmin@domain.com>"),
+	[string[]] $EmailFrom = @("John Doe Admin <jdoeadmin@example.com>"),
 	[Parameter(Mandatory = $true, Position = 4)]
 	$EmailSubject = "Mailbox Export Failures and Errors",
 	[Parameter(Mandatory = $true, Position = 5)]
-	$SMTPServer = "mail.com"
+	$SMTPServer = "mail.example.com"
 )
 
 #Region Variable Declaration
